@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: chat-bot-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: ENV
+        value: production
+      - key: POLZA_API_KEY
+        sync: false

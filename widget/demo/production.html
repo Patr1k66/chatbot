@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Production Demo — Кофейня «Уют»</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fdf6ec, #f5ebe0);
+        color: #3d2b1f;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Кофейня «Уют» — Production Demo</h1>
+      <p>
+        Виджет подключён к production API на Railway и widget на Vercel.
+        Используйте этот же embed-код на сайте клиента.
+      </p>
+    </main>
+
+    <script
+      src="https://widget-silk-alpha.vercel.app/widget.js"
+      data-bot-id="client-1"
+      data-api-url="https://chat-bot-api-production-741a.up.railway.app"
+      defer
+    ></script>
+  </body>
+</html>

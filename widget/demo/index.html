@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Bot Demo — Кофейня «Уют»</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fdf6ec, #f5ebe0);
+        color: #3d2b1f;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 24px;
+      }
+      h1 {
+        margin-bottom: 8px;
+      }
+      p {
+        line-height: 1.6;
+      }
+      code {
+        background: #fff;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Кофейня «Уют»</h1>
+      <p>Демо-страница для тестирования embed-виджета чат-бота.</p>
+      <p>
+        Нажмите на кнопку чата в правом нижнем углу и задайте вопрос про меню,
+        доставку или акции.
+      </p>
+      <p>
+        API по умолчанию: <code>http://127.0.0.1:8000</code>. Запустите backend
+        перед тестом.
+      </p>
+    </main>
+
+    <script
+      src="../src/widget.js"
+      data-bot-id="client-1"
+      data-api-url="http://127.0.0.1:8000"
+      defer
+    ></script>
+  </body>
+</html>
