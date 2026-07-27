@@ -46,13 +46,15 @@ npx serve .
 2. Укажите `allowed_domains` — домены сайта клиента (для CORS)
 3. Заполните `system_prompt` реальными данными бизнеса
 
-**Важно:** обновите `POLZA_API_KEY` в Railway Variables — используйте новый ключ с [polza.ai/dashboard/api-keys](https://polza.ai/dashboard/api-keys). Старый ключ из чата недействителен (401).
+**Важно:** `POLZA_API_KEY` храните в Vercel → Project **chat-bot-api** → Settings → Environment Variables.
 
 ## Production URLs (текущий деплой)
 
 - **Widget:** https://widget-silk-alpha.vercel.app/widget.js
-- **API:** https://chat-bot-api-production-741a.up.railway.app
+- **API:** https://chat-bot-api-lovat.vercel.app (Vercel — работает из РФ без VPN)
 - **Demo:** https://widget-silk-alpha.vercel.app/demo/production.html
+
+> Railway (`*.railway.app`) из России часто недоступен без VPN. Используйте Vercel для API.
 
 ## Встраивание на сайт клиента
 
@@ -60,21 +62,29 @@ npx serve .
 <script
   src="https://widget-silk-alpha.vercel.app/widget.js"
   data-bot-id="client-1"
-  data-api-url="https://chat-bot-api-production-741a.up.railway.app"
+  data-api-url="https://chat-bot-api-lovat.vercel.app"
   defer
 ></script>
 ```
 
-## Деплой backend (Railway)
+## Деплой backend (Vercel)
 
-1. Залейте репозиторий на GitHub
-2. [railway.app](https://railway.app) → New Project → Deploy from GitHub
-3. Root Directory: `backend`
-4. Variables:
-   - `POLZA_API_KEY` — ваш ключ Polza.ai
+```bash
+cd backend
+npx vercel deploy --prod
+```
+
+1. [vercel.com](https://vercel.com) → проект **chat-bot-api**
+2. Root Directory: `backend`
+3. Environment Variables:
+   - `POLZA_API_KEY` — ключ Polza.ai
    - `ENV=production`
-   - `CORS_ORIGINS` — доп. домены через запятую (опционально)
-5. После деплоя скопируйте public URL (например `https://xxx.up.railway.app`)
+
+## Деплой backend (Railway, альтернатива)
+
+Railway может быть недоступен из РФ без VPN. Предпочтительно Vercel (см. выше).
+
+1. [railway.app](https://railway.app) → Deploy from GitHub, Root Directory: `backend`
 
 ## Деплой widget (Vercel)
 
